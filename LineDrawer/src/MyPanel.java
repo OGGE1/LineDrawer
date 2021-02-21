@@ -12,16 +12,18 @@ import java.util.Random;
 public class MyPanel extends JPanel {
     Random rand = new Random();
     private int x;
+    private int lineAmount;
 
-    public MyPanel() {
+    public MyPanel(int lineAmount) {
         this.setPreferredSize(new Dimension(1280, 720));
+        this.lineAmount = lineAmount;
     }
 
     public void paint(Graphics g) {
         Graphics2D g2D = (Graphics2D) g;
         int itr = 0;
 
-        while (itr < 100000) {
+        while (itr < lineAmount) {
             setX(randomX());
             g2D.drawLine(randomX(), randomX(), randomX(), randomX());
             g2D.setColor(randomColor());

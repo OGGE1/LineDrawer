@@ -11,7 +11,8 @@ public class MyFrame extends JFrame {
     MyPanel panel;
 
     public MyFrame() {
-        panel = new MyPanel();
+        int lineAmount = Integer.parseInt(JOptionPane.showInputDialog(null, "Hur många linjer?"));
+        panel = new MyPanel(lineAmount);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         this.add(panel);
